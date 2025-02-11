@@ -7,17 +7,18 @@ export default function App() {
   const [upperLimit, setUpperLimit] = useState('');
 
   const calculateHeartRateLimits = () => {
-      const ageNum = Number(age.trim());
+    const ageNum = Number(age.trim());
 
-        if (!age || isNaN(ageNum) || ageNum <= 0) {
-        alert('Please enter a valid age');
+    if (!age || isNaN(ageNum) || ageNum <= 0) {
+      alert('Please enter a valid age');
       return;
     }
-      const lower = (220 - ageNum) * 0.65;
-      const upper = (220 - ageNum) * 0.85;
-    
-      setLowerLimit(lower.toFixed(1));
-      setUpperLimit(upper.toFixed(1));
+
+    const lower = (220 - ageNum) * 0.65;
+    const upper = (220 - ageNum) * 0.85;
+
+    setLowerLimit(lower.toFixed(1));
+    setUpperLimit(upper.toFixed(1));
 
     Keyboard.dismiss();
   };
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#C0C0C0',
   },
-    
   result: {
     marginTop: 20,
     alignItems: 'center',
@@ -88,6 +88,5 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(255, 255, 255, 0.8)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
-    
   },
 });
